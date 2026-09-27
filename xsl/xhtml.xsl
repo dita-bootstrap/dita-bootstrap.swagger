@@ -22,7 +22,7 @@
 				<xsl:with-param name="default-output-class">accordion-item</xsl:with-param>
 			</xsl:call-template>
 			<xsl:call-template name="setidaname"/>
-			<h2 class="accordion-header px-3" id="{$headingId}">
+			<h2 class="accordion-header py-3" id="{$headingId}">
 				<button
 				  class="accordion-button collapsed"
 				  type="button"
