@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?>
+<!--
+  This file is part of the DITA Bootstrap Swagger plug-in for DITA Open Toolkit.
+  See the accompanying LICENSE file for applicable licenses.
+-->
+<plugin id="org.dita-bootstrap.swagger" version="1.0.0">
+  <require plugin="org.dita-bootstrap.html"/>
+  <require plugin="fox.jason.passthrough.swagger"/>
+  <feature
+    extension="dita.xsl.html5-bootstrap"
+    value="xsl/xhtml.xsl"
+    type="file"
+  />
+</plugin>
