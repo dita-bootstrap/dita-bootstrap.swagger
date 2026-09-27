@@ -17,28 +17,30 @@
 		/>
 		<xsl:variable name="headingId" select="concat('heading_', @id)"/>
 		<xsl:variable name="collapseId" select="concat('collapse_', @id)"/>
-		<div class="accordion-item">
-			<xsl:call-template name="commonattributes">
-				<xsl:with-param name="default-output-class">accordion-item</xsl:with-param>
-			</xsl:call-template>
-			<xsl:call-template name="setidaname"/>
-			<h2 class="accordion-header py-3" id="{$headingId}">
-				<button
-				  class="accordion-button collapsed"
-				  type="button"
-				  data-bs-toggle="collapse"
-				  aria-expanded="false"
-				>
-					<xsl:attribute name="data-bs-target" select="concat('#', $collapseId)"/>
-					<xsl:attribute name="aria-controls" select="$collapseId"/>
-					<xsl:call-template name="swagger-summary-row">
-						<xsl:with-param name="codeblock" select="$codeblock"/>
-					</xsl:call-template>
-				</button>
-			</h2>
-			<div class="accordion-collapse collapse" id="{$collapseId}" aria-labelledby="{$headingId}">
-				<div class="accordion-body px-4">
-					<xsl:apply-templates select="*[contains(@class,' topic/body ')]/*[not(. is $codeblock)]"/>
+		<div class="accordion mb-2">
+			<div class="accordion-item">
+				<xsl:call-template name="commonattributes">
+					<xsl:with-param name="default-output-class">accordion-item</xsl:with-param>
+				</xsl:call-template>
+				<xsl:call-template name="setidaname"/>
+				<h2 class="accordion-header" id="{$headingId}">
+					<button
+					  class="accordion-button collapsed"
+					  type="button"
+					  data-bs-toggle="collapse"
+					  aria-expanded="false"
+					>
+						<xsl:attribute name="data-bs-target" select="concat('#', $collapseId)"/>
+						<xsl:attribute name="aria-controls" select="$collapseId"/>
+						<xsl:call-template name="swagger-summary-row">
+							<xsl:with-param name="codeblock" select="$codeblock"/>
+						</xsl:call-template>
+					</button>
+				</h2>
+				<div class="accordion-collapse collapse" id="{$collapseId}" aria-labelledby="{$headingId}">
+					<div class="accordion-body px-4">
+						<xsl:apply-templates select="*[contains(@class,' topic/body ')]/*[not(. is $codeblock)]"/>
+					</div>
 				</div>
 			</div>
 		</div>

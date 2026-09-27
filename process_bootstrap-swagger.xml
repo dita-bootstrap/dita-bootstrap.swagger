@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--ant-->
+<!--
+	This file is part of the DITA Bootstrap Swagger plug-in for DITA Open Toolkit.
+	See the accompanying LICENSE file for applicable licenses.
+-->
+<project
+  name="org.dita-bootstrap.swagger"
+  default="bootstrap-swagger.css.copy"
+  xmlns:if="ant:if"
+  xmlns:unless="ant:unless"
+>
+
+	<target name="bootstrap-swagger.css.copy">
+		<loadfile
+      property="bootstrap-swagger.css"
+      srcFile="${dita.plugin.org.dita-bootstrap.swagger.dir}/css/bootstrap-swagger.css"
+    />
+		<echo
+      append="true"
+      message="${line.separator}${bootstrap-swagger.css}"
+      file="${extend.css.file}"
+    />
+	</target>
+</project>

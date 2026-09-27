@@ -7,9 +7,12 @@
 <plugin id="org.dita-bootstrap.swagger" version="1.0.0">
   <require plugin="org.dita-bootstrap.html"/>
   <require plugin="fox.jason.passthrough.swagger"/>
+  <require plugin="fox.jason.extend.css"/>
   <feature
     extension="dita.xsl.html5-bootstrap"
     value="xsl/xhtml.xsl"
     type="file"
   />
+  <feature extension="ant.import" file="process_bootstrap-swagger.xml"/>
+  <feature extension="extend.css.process" value="bootstrap-swagger.css.copy"/>
 </plugin>

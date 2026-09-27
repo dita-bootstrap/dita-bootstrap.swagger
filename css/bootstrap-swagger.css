@@ -1,0 +1,16 @@
+
+[class*="swagger-"] .accordion-button {
+    background: transparent;
+}
+
+[class*="swagger-"] th {
+    background: var(--bs-table-striped-bg);
+}
+
+[class*="swagger-"] td {
+    background: transparent;
+}
+
+span.swagger-verb {
+    margin-left: 0px !important;
+}
