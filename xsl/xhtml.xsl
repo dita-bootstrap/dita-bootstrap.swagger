@@ -22,7 +22,7 @@
 				<xsl:with-param name="default-output-class">accordion-item</xsl:with-param>
 			</xsl:call-template>
 			<xsl:call-template name="setidaname"/>
-			<h2 class="accordion-header" id="{$headingId}">
+			<h2 class="accordion-header pt-3" id="{$headingId}">
 				<button
 				  class="accordion-button collapsed"
 				  type="button"
@@ -37,7 +37,7 @@
 				</button>
 			</h2>
 			<div class="accordion-collapse collapse" id="{$collapseId}" aria-labelledby="{$headingId}">
-				<div class="accordion-body">
+				<div class="accordion-body px-4">
 					<xsl:apply-templates select="*[contains(@class,' topic/body ')]/*[not(. is $codeblock)]"/>
 				</div>
 			</div>
