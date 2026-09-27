@@ -45,4 +45,38 @@
 			</div>
 		</div>
 	</xsl:template>
+
+	<xsl:template
+	  match="*[contains(@class,' topic/topic ')][@outputclass = 'definition']"
+	  mode="child.topic"
+	  priority="10"
+	>
+		<xsl:variable name="headingId" select="concat('heading_', @id)"/>
+		<xsl:variable name="collapseId" select="concat('collapse_', @id)"/>
+		<div class="accordion mb-2">
+			<div class="accordion-item">
+				<xsl:call-template name="commonattributes">
+					<xsl:with-param name="default-output-class">accordion-item</xsl:with-param>
+				</xsl:call-template>
+				<xsl:call-template name="setidaname"/>
+				<h2 class="accordion-header" id="{$headingId}">
+					<button
+					  class="accordion-button collapsed"
+					  type="button"
+					  data-bs-toggle="collapse"
+					  aria-expanded="false"
+					>
+						<xsl:attribute name="data-bs-target" select="concat('#', $collapseId)"/>
+						<xsl:attribute name="aria-controls" select="$collapseId"/>
+						<xsl:value-of select="*[contains(@class,' topic/title ')]"/>
+					</button>
+				</h2>
+				<div class="accordion-collapse collapse" id="{$collapseId}" aria-labelledby="{$headingId}">
+					<div class="accordion-body px-4">
+						<xsl:apply-templates select="*[contains(@class,' topic/body ')]/*"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</xsl:template>
 </xsl:stylesheet>
