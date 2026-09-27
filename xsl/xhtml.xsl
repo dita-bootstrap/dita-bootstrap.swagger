@@ -17,12 +17,12 @@
 		/>
 		<xsl:variable name="headingId" select="concat('heading_', @id)"/>
 		<xsl:variable name="collapseId" select="concat('collapse_', @id)"/>
-		<article class="accordion-item">
+		<div class="accordion-item">
 			<xsl:call-template name="commonattributes">
 				<xsl:with-param name="default-output-class">accordion-item</xsl:with-param>
 			</xsl:call-template>
 			<xsl:call-template name="setidaname"/>
-			<h2 class="accordion-header pt-3" id="{$headingId}">
+			<h2 class="accordion-header px-3" id="{$headingId}">
 				<button
 				  class="accordion-button collapsed"
 				  type="button"
@@ -41,6 +41,6 @@
 					<xsl:apply-templates select="*[contains(@class,' topic/body ')]/*[not(. is $codeblock)]"/>
 				</div>
 			</div>
-		</article>
+		</div>
 	</xsl:template>
 </xsl:stylesheet>
