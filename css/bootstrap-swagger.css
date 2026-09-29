@@ -3,6 +3,10 @@
     background: transparent;
 }
 
+[class*="swagger-"] .accordion-button:not(.collapsed):not(:focus) {
+    box-shadow: inset 0 -2px 0 var(--swagger-color);
+}
+
 [class*="swagger-"] th {
     background: var(--bs-table-striped-bg);
 }

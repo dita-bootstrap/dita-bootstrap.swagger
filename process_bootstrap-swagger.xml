@@ -11,6 +11,13 @@
   xmlns:unless="ant:unless"
 >
 
+	<target name="bootstrap-swagger.init" unless="swagger.use.theme">
+		<property
+      name="swagger.css.theme"
+      value="${dita.plugin.org.dita-bootstrap.swagger.dir}/css/bootstrap-theme.css"
+    />
+	</target>
+
 	<target name="bootstrap-swagger.css.copy">
 		<loadfile
       property="bootstrap-swagger.css"

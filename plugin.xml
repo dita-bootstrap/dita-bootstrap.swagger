@@ -14,5 +14,6 @@
     type="file"
   />
   <feature extension="ant.import" file="process_bootstrap-swagger.xml"/>
+  <feature extension="bootstrap.process.pre" value="bootstrap-swagger.init"/>
   <feature extension="extend.css.process" value="bootstrap-swagger.css.copy"/>
 </plugin>
