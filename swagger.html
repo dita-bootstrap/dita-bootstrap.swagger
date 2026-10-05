@@ -1,0 +1,934 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="copyright" content="(C) Copyright 2026"><meta name="generator" content="DITA-OT"><meta property="og:type" content="website"><meta property="og:url" content="https://dita-bootstrap.github.io/dita-bootstrap.swagger/swagger.html"><meta property="og:title" content="Petstore API"><meta property="og:description" content=""><meta property="og:image" content="https://dita-bootstrap.github.io/dita-bootstrap.swagger/open-graph.svg"><meta name="twitter:title" content="Petstore API"><meta name="twitter:description" content=""><meta property="twitter:url" content="https://dita-bootstrap.github.io/dita-bootstrap.swagger/swagger.html"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://dita-bootstrap.github.io/dita-bootstrap.swagger/open-graph.svg"><title>Petstore API</title><link rel="shortcut icon" href="./favicon/favicon.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="css/commonltr.css">
+<link rel="stylesheet" type="text/css" href="./css/common-extended.css"><link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" integrity="sha384-CK2SzKma4jA5H/MXDUU7i1TqZlCFaD4T01vtyDFvPlD97JQyS+IsSh1nI2EFbpyk" crossorigin="anonymous"></head><body class="d-flex flex-column min-vh-100" id="petstore-api"><div class="visually-hidden-focusable overflow-hidden p-2 bg-body-tertiary"><div class="container-xl"><a class="d-inline-flex m-1 btn btn-outline-primary btn-sm" href="#ariaid-title1">Skip to main content</a></div></div><header role="banner" class="sticky-top"><nav class="navbar navbar-expand-lg navbar-dark bg-info">
+  <div class="container-xxl">
+    <a class="navbar-brand" href="https://dita-bootstrap.github.io/dita-bootstrap.swagger">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bootstrap" viewBox="0 0 16 16">
+        <path d="M5.062 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377H6.375z"/>
+        <path d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3H4z"/>
+      </svg>
+      DITA Bootstrap Swagger
+    </a>
+    <button class="navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-three-dots"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.dita-ot.org/plugins#!org.dita-bootstrap.swagger">Plugin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/dita-bootstrap/dita-bootstrap.swagger/releases">Releases</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/dita-bootstrap/dita-bootstrap.swagger">Source</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://swagger.io/">Swagger Docs</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto me-1">
+        <!--
+          This is a dark/light color theme toggler.
+          It requires JavaScript to function.
+        -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-color-mode" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+            <span class="d-light">
+              <i class="bi bi-brightness-high-fill"></i>
+            </span>
+            <span class="d-dark">
+              <i class="bi bi-moon-stars-fill"></i>
+            </span>
+            <span class="d-auto">
+              <i class="bi bi-circle-half"></i>
+            </span>
+            <span class="d-lg-none ms-2">Color mode</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-color-mode" style="--bs-dropdown-min-width: 6rem;" data-bs-popper="static">
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                <i class="bi bi-brightness-high-fill"></i>
+                <span class="ms-2">Light</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                <i class="bi bi-moon-stars-fill"></i>
+                <span class="ms-2">Dark</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+                <i class="bi bi-circle-half"></i>
+                <span class="ms-2">Auto</span>
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav></header><div class="bs-container container-xxl bd-gutter mt-3 my-md-4" id="content"><nav class="d-flex flex-align-start flex-column h-100 overflow-y-auto" role="navigation" id="bs-sidebar-nav"><div class="overflow-y-auto"><div></div></div></nav><main role="main" class="bs-main me-3"><article role="article" class="bs-content" aria-labelledby="ariaid-title1">
+<h1 class="title" id="ariaid-title1">Petstore API</h1>
+<div class="body"></div>
+<article class="topic nested1" aria-labelledby="ariaid-title2" id="overview">
+<h2 class="title" id="ariaid-title2">Overview</h2>
+<div class="body">
+<p class="p">This is a sample server Petstore server.  You can find out more about Swagger at <a class="xref" href="http://swagger.io" target="_blank" rel="external noopener">http://swagger.io</a> or on <a class="xref" href="http://swagger.io/irc/" target="_blank" rel="external noopener">irc.freenode.net, #swagger</a>.  For this sample, you can use the api key <code class="ph codeph">special-key</code> to test the authorization filters.</p>
+<section class="section" id="overview__version-information"><h3 class="title h5">Version information</h3>
+
+<p class="p"><em class="ph i">Version</em>: 1.0.0</p>
+</section>
+<section class="section" id="overview__contact-information"><h3 class="title h5">Contact information</h3>
+
+<p class="p"><em class="ph i">Contact Email</em>: apiteam@swagger.io</p>
+</section>
+<section class="section" id="overview__license-information"><h3 class="title h5">License information</h3>
+
+<p class="p"><em class="ph i">License</em>: Apache 2.0 <em class="ph i">License URL</em>: http://www.apache.org/licenses/LICENSE-2.0.html</p>
+</section>
+<section class="section" id="overview__uri-scheme"><h3 class="title h5">URI scheme</h3>
+
+<p class="p"><em class="ph i">Host</em>: petstore.swagger.io <em class="ph i">BasePath</em>: /v2 <em class="ph i">Schemes</em>: HTTPS, HTTP</p>
+</section>
+<section class="section" id="overview__external-docs"><h3 class="title h5">External Docs</h3>
+
+<p class="p"><em class="ph i">Description</em>: Find out more about Swagger <em class="ph i">URL</em>: http://swagger.io</p>
+</section>
+</div>
+</article>
+<article class="topic nested1" aria-labelledby="ariaid-title3" id="pet-1">
+<h2 class="title" id="ariaid-title3">pet</h2>
+<div class="body">
+<p class="p">Everything about your Pets</p>
+</div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-put" id="updatepet"><h2 class="accordion-header" id="heading_updatepet"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_updatepet" aria-controls="collapse_updatepet"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">PUT</span>/pet</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Update an existing pet</span></button></h2><div class="accordion-collapse collapse" id="collapse_updatepet" aria-labelledby="heading_updatepet"><div class="accordion-body px-4"><section class="section" id="updatepet__parameters"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="updatepet__parameters__entry__1">Type</th><th class="entry" id="updatepet__parameters__entry__2">Name</th><th class="entry" id="updatepet__parameters__entry__3">Description</th><th class="entry" id="updatepet__parameters__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="updatepet__parameters__entry__1">Body</td>
+<td class="entry" headers="updatepet__parameters__entry__2"><p class="lines"><strong class="ph b">body</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="updatepet__parameters__entry__3">Pet object that needs to be added to the store</td>
+<td class="entry" headers="updatepet__parameters__entry__4"><a class="xref" href="#pet">Pet</a></td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="updatepet__responses"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="updatepet__responses__entry__1">HTTP Code</th><th class="entry" id="updatepet__responses__entry__2">Description</th><th class="entry" id="updatepet__responses__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="updatepet__responses__entry__1"><strong class="ph b">400</strong></td>
+<td class="entry" headers="updatepet__responses__entry__2">Invalid ID supplied</td>
+<td class="entry" headers="updatepet__responses__entry__3">No Content</td>
+</tr>
+<tr>
+<td class="entry" headers="updatepet__responses__entry__1"><strong class="ph b">404</strong></td>
+<td class="entry" headers="updatepet__responses__entry__2">Pet not found</td>
+<td class="entry" headers="updatepet__responses__entry__3">No Content</td>
+</tr>
+<tr>
+<td class="entry" headers="updatepet__responses__entry__1"><strong class="ph b">405</strong></td>
+<td class="entry" headers="updatepet__responses__entry__2">Validation exception</td>
+<td class="entry" headers="updatepet__responses__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="updatepet__consumes"><h4 class="title h4">Consumes</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/json</code></li>
+<li class="li"><code class="ph codeph">application/xml</code></li>
+</ul>
+</section><section class="section" id="updatepet__produces"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-post" id="addpet"><h2 class="accordion-header" id="heading_addpet"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_addpet" aria-controls="collapse_addpet"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">POST</span>/pet</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Add a new pet to the store</span></button></h2><div class="accordion-collapse collapse" id="collapse_addpet" aria-labelledby="heading_addpet"><div class="accordion-body px-4"><section class="section" id="addpet__parameters-1"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="addpet__parameters-1__entry__1">Type</th><th class="entry" id="addpet__parameters-1__entry__2">Name</th><th class="entry" id="addpet__parameters-1__entry__3">Description</th><th class="entry" id="addpet__parameters-1__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="addpet__parameters-1__entry__1">Body</td>
+<td class="entry" headers="addpet__parameters-1__entry__2"><p class="lines"><strong class="ph b">body</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="addpet__parameters-1__entry__3">Pet object that needs to be added to the store</td>
+<td class="entry" headers="addpet__parameters-1__entry__4"><a class="xref" href="#pet">Pet</a></td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="addpet__responses-1"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="addpet__responses-1__entry__1">HTTP Code</th><th class="entry" id="addpet__responses-1__entry__2">Description</th><th class="entry" id="addpet__responses-1__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="addpet__responses-1__entry__1"><strong class="ph b">405</strong></td>
+<td class="entry" headers="addpet__responses-1__entry__2">Invalid input</td>
+<td class="entry" headers="addpet__responses-1__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="addpet__consumes-1"><h4 class="title h4">Consumes</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/json</code></li>
+<li class="li"><code class="ph codeph">application/xml</code></li>
+</ul>
+</section><section class="section" id="addpet__produces-1"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-get" id="findpetsbystatus"><h2 class="accordion-header" id="heading_findpetsbystatus"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_findpetsbystatus" aria-controls="collapse_findpetsbystatus"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">GET</span>/pet/findByStatus</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Finds Pets by status</span></button></h2><div class="accordion-collapse collapse" id="collapse_findpetsbystatus" aria-labelledby="heading_findpetsbystatus"><div class="accordion-body px-4"><p class="p">Multiple status values can be provided with comma separated strings</p><section class="section" id="findpetsbystatus__parameters-2"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="findpetsbystatus__parameters-2__entry__1">Type</th><th class="entry" id="findpetsbystatus__parameters-2__entry__2">Name</th><th class="entry" id="findpetsbystatus__parameters-2__entry__3">Description</th><th class="entry" id="findpetsbystatus__parameters-2__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="findpetsbystatus__parameters-2__entry__1">Query</td>
+<td class="entry" headers="findpetsbystatus__parameters-2__entry__2"><p class="lines"><strong class="ph b">status</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="findpetsbystatus__parameters-2__entry__3">Status values that need to be considered for filter</td>
+<td class="entry" headers="findpetsbystatus__parameters-2__entry__4">array</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="findpetsbystatus__responses-2"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="findpetsbystatus__responses-2__entry__1">HTTP Code</th><th class="entry" id="findpetsbystatus__responses-2__entry__2">Description</th><th class="entry" id="findpetsbystatus__responses-2__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="findpetsbystatus__responses-2__entry__1"><strong class="ph b">200</strong></td>
+<td class="entry" headers="findpetsbystatus__responses-2__entry__2">successful operation</td>
+<td class="entry" headers="findpetsbystatus__responses-2__entry__3">Array of <a class="xref" href="#pet">Pet</a></td>
+</tr>
+<tr>
+<td class="entry" headers="findpetsbystatus__responses-2__entry__1"><strong class="ph b">400</strong></td>
+<td class="entry" headers="findpetsbystatus__responses-2__entry__2">Invalid status value</td>
+<td class="entry" headers="findpetsbystatus__responses-2__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="findpetsbystatus__produces-2"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-get" id="findpetsbytags"><h2 class="accordion-header" id="heading_findpetsbytags"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_findpetsbytags" aria-controls="collapse_findpetsbytags"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">GET</span>/pet/findByTags</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Finds Pets by tags</span></button></h2><div class="accordion-collapse collapse" id="collapse_findpetsbytags" aria-labelledby="heading_findpetsbytags"><div class="accordion-body px-4"><p class="p">Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.</p><section class="section" id="findpetsbytags__parameters-3"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="findpetsbytags__parameters-3__entry__1">Type</th><th class="entry" id="findpetsbytags__parameters-3__entry__2">Name</th><th class="entry" id="findpetsbytags__parameters-3__entry__3">Description</th><th class="entry" id="findpetsbytags__parameters-3__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="findpetsbytags__parameters-3__entry__1">Query</td>
+<td class="entry" headers="findpetsbytags__parameters-3__entry__2"><p class="lines"><strong class="ph b">tags</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="findpetsbytags__parameters-3__entry__3">Tags to filter by</td>
+<td class="entry" headers="findpetsbytags__parameters-3__entry__4">array</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="findpetsbytags__responses-3"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="findpetsbytags__responses-3__entry__1">HTTP Code</th><th class="entry" id="findpetsbytags__responses-3__entry__2">Description</th><th class="entry" id="findpetsbytags__responses-3__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="findpetsbytags__responses-3__entry__1"><strong class="ph b">200</strong></td>
+<td class="entry" headers="findpetsbytags__responses-3__entry__2">successful operation</td>
+<td class="entry" headers="findpetsbytags__responses-3__entry__3">Array of <a class="xref" href="#pet">Pet</a></td>
+</tr>
+<tr>
+<td class="entry" headers="findpetsbytags__responses-3__entry__1"><strong class="ph b">400</strong></td>
+<td class="entry" headers="findpetsbytags__responses-3__entry__2">Invalid tag value</td>
+<td class="entry" headers="findpetsbytags__responses-3__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="findpetsbytags__produces-3"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-get" id="getpetbyid"><h2 class="accordion-header" id="heading_getpetbyid"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_getpetbyid" aria-controls="collapse_getpetbyid"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">GET</span>/pet/{petId}</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Find pet by ID</span></button></h2><div class="accordion-collapse collapse" id="collapse_getpetbyid" aria-labelledby="heading_getpetbyid"><div class="accordion-body px-4"><p class="p">Returns a single pet</p><section class="section" id="getpetbyid__parameters-4"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="getpetbyid__parameters-4__entry__1">Type</th><th class="entry" id="getpetbyid__parameters-4__entry__2">Name</th><th class="entry" id="getpetbyid__parameters-4__entry__3">Description</th><th class="entry" id="getpetbyid__parameters-4__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="getpetbyid__parameters-4__entry__1">Path</td>
+<td class="entry" headers="getpetbyid__parameters-4__entry__2"><p class="lines"><strong class="ph b">petId</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="getpetbyid__parameters-4__entry__3">ID of pet to return</td>
+<td class="entry" headers="getpetbyid__parameters-4__entry__4">integer (int64)</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="getpetbyid__responses-4"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="getpetbyid__responses-4__entry__1">HTTP Code</th><th class="entry" id="getpetbyid__responses-4__entry__2">Description</th><th class="entry" id="getpetbyid__responses-4__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="getpetbyid__responses-4__entry__1"><strong class="ph b">200</strong></td>
+<td class="entry" headers="getpetbyid__responses-4__entry__2">successful operation</td>
+<td class="entry" headers="getpetbyid__responses-4__entry__3"><a class="xref" href="#pet">Pet</a></td>
+</tr>
+<tr>
+<td class="entry" headers="getpetbyid__responses-4__entry__1"><strong class="ph b">400</strong></td>
+<td class="entry" headers="getpetbyid__responses-4__entry__2">Invalid ID supplied</td>
+<td class="entry" headers="getpetbyid__responses-4__entry__3">No Content</td>
+</tr>
+<tr>
+<td class="entry" headers="getpetbyid__responses-4__entry__1"><strong class="ph b">404</strong></td>
+<td class="entry" headers="getpetbyid__responses-4__entry__2">Pet not found</td>
+<td class="entry" headers="getpetbyid__responses-4__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="getpetbyid__produces-4"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-post" id="updatepetwithform"><h2 class="accordion-header" id="heading_updatepetwithform"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_updatepetwithform" aria-controls="collapse_updatepetwithform"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">POST</span>/pet/{petId}</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Updates a pet in the store with form data</span></button></h2><div class="accordion-collapse collapse" id="collapse_updatepetwithform" aria-labelledby="heading_updatepetwithform"><div class="accordion-body px-4"><section class="section" id="updatepetwithform__parameters-5"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="updatepetwithform__parameters-5__entry__1">Type</th><th class="entry" id="updatepetwithform__parameters-5__entry__2">Name</th><th class="entry" id="updatepetwithform__parameters-5__entry__3">Description</th><th class="entry" id="updatepetwithform__parameters-5__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="updatepetwithform__parameters-5__entry__1">Path</td>
+<td class="entry" headers="updatepetwithform__parameters-5__entry__2"><p class="lines"><strong class="ph b">petId</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="updatepetwithform__parameters-5__entry__3">ID of pet that needs to be updated</td>
+<td class="entry" headers="updatepetwithform__parameters-5__entry__4">integer (int64)</td>
+</tr>
+<tr>
+<td class="entry" headers="updatepetwithform__parameters-5__entry__1">FormData</td>
+<td class="entry" headers="updatepetwithform__parameters-5__entry__2"><p class="lines"><strong class="ph b">name</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="updatepetwithform__parameters-5__entry__3">Updated name of the pet</td>
+<td class="entry" headers="updatepetwithform__parameters-5__entry__4">string</td>
+</tr>
+<tr>
+<td class="entry" headers="updatepetwithform__parameters-5__entry__1">FormData</td>
+<td class="entry" headers="updatepetwithform__parameters-5__entry__2"><p class="lines"><strong class="ph b">status</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="updatepetwithform__parameters-5__entry__3">Updated status of the pet</td>
+<td class="entry" headers="updatepetwithform__parameters-5__entry__4">string</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="updatepetwithform__responses-5"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="updatepetwithform__responses-5__entry__1">HTTP Code</th><th class="entry" id="updatepetwithform__responses-5__entry__2">Description</th><th class="entry" id="updatepetwithform__responses-5__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="updatepetwithform__responses-5__entry__1"><strong class="ph b">405</strong></td>
+<td class="entry" headers="updatepetwithform__responses-5__entry__2">Invalid input</td>
+<td class="entry" headers="updatepetwithform__responses-5__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="updatepetwithform__consumes-2"><h4 class="title h4">Consumes</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/x-www-form-urlencoded</code></li>
+</ul>
+</section><section class="section" id="updatepetwithform__produces-5"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-delete" id="deletepet"><h2 class="accordion-header" id="heading_deletepet"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_deletepet" aria-controls="collapse_deletepet"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">DELETE</span>/pet/{petId}</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Deletes a pet</span></button></h2><div class="accordion-collapse collapse" id="collapse_deletepet" aria-labelledby="heading_deletepet"><div class="accordion-body px-4"><section class="section" id="deletepet__parameters-6"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="deletepet__parameters-6__entry__1">Type</th><th class="entry" id="deletepet__parameters-6__entry__2">Name</th><th class="entry" id="deletepet__parameters-6__entry__3">Description</th><th class="entry" id="deletepet__parameters-6__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="deletepet__parameters-6__entry__1">Header</td>
+<td class="entry" headers="deletepet__parameters-6__entry__2"><p class="lines"><strong class="ph b">api_key</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="deletepet__parameters-6__entry__3"></td>
+<td class="entry" headers="deletepet__parameters-6__entry__4">string</td>
+</tr>
+<tr>
+<td class="entry" headers="deletepet__parameters-6__entry__1">Path</td>
+<td class="entry" headers="deletepet__parameters-6__entry__2"><p class="lines"><strong class="ph b">petId</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="deletepet__parameters-6__entry__3">Pet id to delete</td>
+<td class="entry" headers="deletepet__parameters-6__entry__4">integer (int64)</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="deletepet__responses-6"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="deletepet__responses-6__entry__1">HTTP Code</th><th class="entry" id="deletepet__responses-6__entry__2">Description</th><th class="entry" id="deletepet__responses-6__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="deletepet__responses-6__entry__1"><strong class="ph b">400</strong></td>
+<td class="entry" headers="deletepet__responses-6__entry__2">Invalid ID supplied</td>
+<td class="entry" headers="deletepet__responses-6__entry__3">No Content</td>
+</tr>
+<tr>
+<td class="entry" headers="deletepet__responses-6__entry__1"><strong class="ph b">404</strong></td>
+<td class="entry" headers="deletepet__responses-6__entry__2">Pet not found</td>
+<td class="entry" headers="deletepet__responses-6__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="deletepet__produces-6"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-post" id="uploadfile"><h2 class="accordion-header" id="heading_uploadfile"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_uploadfile" aria-controls="collapse_uploadfile"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">POST</span>/pet/{petId}/uploadImage</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">uploads an image</span></button></h2><div class="accordion-collapse collapse" id="collapse_uploadfile" aria-labelledby="heading_uploadfile"><div class="accordion-body px-4"><section class="section" id="uploadfile__parameters-7"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="uploadfile__parameters-7__entry__1">Type</th><th class="entry" id="uploadfile__parameters-7__entry__2">Name</th><th class="entry" id="uploadfile__parameters-7__entry__3">Description</th><th class="entry" id="uploadfile__parameters-7__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="uploadfile__parameters-7__entry__1">Path</td>
+<td class="entry" headers="uploadfile__parameters-7__entry__2"><p class="lines"><strong class="ph b">petId</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="uploadfile__parameters-7__entry__3">ID of pet to update</td>
+<td class="entry" headers="uploadfile__parameters-7__entry__4">integer (int64)</td>
+</tr>
+<tr>
+<td class="entry" headers="uploadfile__parameters-7__entry__1">FormData</td>
+<td class="entry" headers="uploadfile__parameters-7__entry__2"><p class="lines"><strong class="ph b">additionalMetadata</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="uploadfile__parameters-7__entry__3">Additional data to pass to server</td>
+<td class="entry" headers="uploadfile__parameters-7__entry__4">string</td>
+</tr>
+<tr>
+<td class="entry" headers="uploadfile__parameters-7__entry__1">FormData</td>
+<td class="entry" headers="uploadfile__parameters-7__entry__2"><p class="lines"><strong class="ph b">file</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="uploadfile__parameters-7__entry__3">file to upload</td>
+<td class="entry" headers="uploadfile__parameters-7__entry__4">file</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="uploadfile__responses-7"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="uploadfile__responses-7__entry__1">HTTP Code</th><th class="entry" id="uploadfile__responses-7__entry__2">Description</th><th class="entry" id="uploadfile__responses-7__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="uploadfile__responses-7__entry__1"><strong class="ph b">200</strong></td>
+<td class="entry" headers="uploadfile__responses-7__entry__2">successful operation</td>
+<td class="entry" headers="uploadfile__responses-7__entry__3"><a class="xref" href="#apiresponse">ApiResponse</a></td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="uploadfile__consumes-3"><h4 class="title h4">Consumes</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">multipart/form-data</code></li>
+</ul>
+</section><section class="section" id="uploadfile__produces-7"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+</article>
+<article class="topic nested1" aria-labelledby="ariaid-title12" id="store">
+<h2 class="title" id="ariaid-title12">store</h2>
+<div class="body">
+<p class="p">Access to Petstore orders</p>
+</div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-get" id="getinventory"><h2 class="accordion-header" id="heading_getinventory"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_getinventory" aria-controls="collapse_getinventory"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">GET</span>/store/inventory</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Returns pet inventories by status</span></button></h2><div class="accordion-collapse collapse" id="collapse_getinventory" aria-labelledby="heading_getinventory"><div class="accordion-body px-4"><p class="p">Returns a map of status codes to quantities</p><section class="section" id="getinventory__responses-8"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="getinventory__responses-8__entry__1">HTTP Code</th><th class="entry" id="getinventory__responses-8__entry__2">Description</th><th class="entry" id="getinventory__responses-8__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="getinventory__responses-8__entry__1"><strong class="ph b">200</strong></td>
+<td class="entry" headers="getinventory__responses-8__entry__2">successful operation</td>
+<td class="entry" headers="getinventory__responses-8__entry__3">object</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="getinventory__produces-8"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-post" id="placeorder"><h2 class="accordion-header" id="heading_placeorder"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_placeorder" aria-controls="collapse_placeorder"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">POST</span>/store/order</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Place an order for a pet</span></button></h2><div class="accordion-collapse collapse" id="collapse_placeorder" aria-labelledby="heading_placeorder"><div class="accordion-body px-4"><section class="section" id="placeorder__parameters-8"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="placeorder__parameters-8__entry__1">Type</th><th class="entry" id="placeorder__parameters-8__entry__2">Name</th><th class="entry" id="placeorder__parameters-8__entry__3">Description</th><th class="entry" id="placeorder__parameters-8__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="placeorder__parameters-8__entry__1">Body</td>
+<td class="entry" headers="placeorder__parameters-8__entry__2"><p class="lines"><strong class="ph b">body</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="placeorder__parameters-8__entry__3">order placed for purchasing the pet</td>
+<td class="entry" headers="placeorder__parameters-8__entry__4"><a class="xref" href="#order">Order</a></td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="placeorder__responses-9"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="placeorder__responses-9__entry__1">HTTP Code</th><th class="entry" id="placeorder__responses-9__entry__2">Description</th><th class="entry" id="placeorder__responses-9__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="placeorder__responses-9__entry__1"><strong class="ph b">200</strong></td>
+<td class="entry" headers="placeorder__responses-9__entry__2">successful operation</td>
+<td class="entry" headers="placeorder__responses-9__entry__3"><a class="xref" href="#order">Order</a></td>
+</tr>
+<tr>
+<td class="entry" headers="placeorder__responses-9__entry__1"><strong class="ph b">400</strong></td>
+<td class="entry" headers="placeorder__responses-9__entry__2">Invalid Order</td>
+<td class="entry" headers="placeorder__responses-9__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="placeorder__produces-9"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-get" id="getorderbyid"><h2 class="accordion-header" id="heading_getorderbyid"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_getorderbyid" aria-controls="collapse_getorderbyid"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">GET</span>/store/order/{orderId}</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Find purchase order by ID</span></button></h2><div class="accordion-collapse collapse" id="collapse_getorderbyid" aria-labelledby="heading_getorderbyid"><div class="accordion-body px-4"><p class="p">For valid response try integer IDs with value &gt;= 1 and &lt;= 10. Other values will generated exceptions</p><section class="section" id="getorderbyid__parameters-9"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="getorderbyid__parameters-9__entry__1">Type</th><th class="entry" id="getorderbyid__parameters-9__entry__2">Name</th><th class="entry" id="getorderbyid__parameters-9__entry__3">Description</th><th class="entry" id="getorderbyid__parameters-9__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="getorderbyid__parameters-9__entry__1">Path</td>
+<td class="entry" headers="getorderbyid__parameters-9__entry__2"><p class="lines"><strong class="ph b">orderId</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="getorderbyid__parameters-9__entry__3">ID of pet that needs to be fetched</td>
+<td class="entry" headers="getorderbyid__parameters-9__entry__4">integer (int64)</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="getorderbyid__responses-10"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="getorderbyid__responses-10__entry__1">HTTP Code</th><th class="entry" id="getorderbyid__responses-10__entry__2">Description</th><th class="entry" id="getorderbyid__responses-10__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="getorderbyid__responses-10__entry__1"><strong class="ph b">200</strong></td>
+<td class="entry" headers="getorderbyid__responses-10__entry__2">successful operation</td>
+<td class="entry" headers="getorderbyid__responses-10__entry__3"><a class="xref" href="#order">Order</a></td>
+</tr>
+<tr>
+<td class="entry" headers="getorderbyid__responses-10__entry__1"><strong class="ph b">400</strong></td>
+<td class="entry" headers="getorderbyid__responses-10__entry__2">Invalid ID supplied</td>
+<td class="entry" headers="getorderbyid__responses-10__entry__3">No Content</td>
+</tr>
+<tr>
+<td class="entry" headers="getorderbyid__responses-10__entry__1"><strong class="ph b">404</strong></td>
+<td class="entry" headers="getorderbyid__responses-10__entry__2">Order not found</td>
+<td class="entry" headers="getorderbyid__responses-10__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="getorderbyid__produces-10"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-delete" id="deleteorder"><h2 class="accordion-header" id="heading_deleteorder"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_deleteorder" aria-controls="collapse_deleteorder"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">DELETE</span>/store/order/{orderId}</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Delete purchase order by ID</span></button></h2><div class="accordion-collapse collapse" id="collapse_deleteorder" aria-labelledby="heading_deleteorder"><div class="accordion-body px-4"><p class="p">For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors</p><section class="section" id="deleteorder__parameters-10"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="deleteorder__parameters-10__entry__1">Type</th><th class="entry" id="deleteorder__parameters-10__entry__2">Name</th><th class="entry" id="deleteorder__parameters-10__entry__3">Description</th><th class="entry" id="deleteorder__parameters-10__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="deleteorder__parameters-10__entry__1">Path</td>
+<td class="entry" headers="deleteorder__parameters-10__entry__2"><p class="lines"><strong class="ph b">orderId</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="deleteorder__parameters-10__entry__3">ID of the order that needs to be deleted</td>
+<td class="entry" headers="deleteorder__parameters-10__entry__4">integer (int64)</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="deleteorder__responses-11"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="deleteorder__responses-11__entry__1">HTTP Code</th><th class="entry" id="deleteorder__responses-11__entry__2">Description</th><th class="entry" id="deleteorder__responses-11__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="deleteorder__responses-11__entry__1"><strong class="ph b">400</strong></td>
+<td class="entry" headers="deleteorder__responses-11__entry__2">Invalid ID supplied</td>
+<td class="entry" headers="deleteorder__responses-11__entry__3">No Content</td>
+</tr>
+<tr>
+<td class="entry" headers="deleteorder__responses-11__entry__1"><strong class="ph b">404</strong></td>
+<td class="entry" headers="deleteorder__responses-11__entry__2">Order not found</td>
+<td class="entry" headers="deleteorder__responses-11__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="deleteorder__produces-11"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+</article>
+<article class="topic nested1" aria-labelledby="ariaid-title17" id="user-1">
+<h2 class="title" id="ariaid-title17">user</h2>
+<div class="body">
+<p class="p">Operations about user</p>
+</div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-post" id="createuser"><h2 class="accordion-header" id="heading_createuser"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_createuser" aria-controls="collapse_createuser"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">POST</span>/user</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Create user</span></button></h2><div class="accordion-collapse collapse" id="collapse_createuser" aria-labelledby="heading_createuser"><div class="accordion-body px-4"><p class="p">This can only be done by the logged in user.</p><section class="section" id="createuser__parameters-11"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="createuser__parameters-11__entry__1">Type</th><th class="entry" id="createuser__parameters-11__entry__2">Name</th><th class="entry" id="createuser__parameters-11__entry__3">Description</th><th class="entry" id="createuser__parameters-11__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="createuser__parameters-11__entry__1">Body</td>
+<td class="entry" headers="createuser__parameters-11__entry__2"><p class="lines"><strong class="ph b">body</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="createuser__parameters-11__entry__3">Created user object</td>
+<td class="entry" headers="createuser__parameters-11__entry__4"><a class="xref" href="#user">User</a></td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="createuser__responses-12"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="createuser__responses-12__entry__1">HTTP Code</th><th class="entry" id="createuser__responses-12__entry__2">Description</th><th class="entry" id="createuser__responses-12__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="createuser__responses-12__entry__1"><strong class="ph b">default</strong></td>
+<td class="entry" headers="createuser__responses-12__entry__2">successful operation</td>
+<td class="entry" headers="createuser__responses-12__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="createuser__produces-12"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-post" id="createuserswitharrayinput"><h2 class="accordion-header" id="heading_createuserswitharrayinput"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_createuserswitharrayinput" aria-controls="collapse_createuserswitharrayinput"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">POST</span>/user/createWithArray</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Creates list of users with given input array</span></button></h2><div class="accordion-collapse collapse" id="collapse_createuserswitharrayinput" aria-labelledby="heading_createuserswitharrayinput"><div class="accordion-body px-4"><section class="section" id="createuserswitharrayinput__parameters-12"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="createuserswitharrayinput__parameters-12__entry__1">Type</th><th class="entry" id="createuserswitharrayinput__parameters-12__entry__2">Name</th><th class="entry" id="createuserswitharrayinput__parameters-12__entry__3">Description</th><th class="entry" id="createuserswitharrayinput__parameters-12__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="createuserswitharrayinput__parameters-12__entry__1">Body</td>
+<td class="entry" headers="createuserswitharrayinput__parameters-12__entry__2"><p class="lines"><strong class="ph b">body</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="createuserswitharrayinput__parameters-12__entry__3">List of user object</td>
+<td class="entry" headers="createuserswitharrayinput__parameters-12__entry__4">Array of <a class="xref" href="#user">User</a></td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="createuserswitharrayinput__responses-13"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="createuserswitharrayinput__responses-13__entry__1">HTTP Code</th><th class="entry" id="createuserswitharrayinput__responses-13__entry__2">Description</th><th class="entry" id="createuserswitharrayinput__responses-13__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="createuserswitharrayinput__responses-13__entry__1"><strong class="ph b">default</strong></td>
+<td class="entry" headers="createuserswitharrayinput__responses-13__entry__2">successful operation</td>
+<td class="entry" headers="createuserswitharrayinput__responses-13__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="createuserswitharrayinput__produces-13"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-post" id="createuserswithlistinput"><h2 class="accordion-header" id="heading_createuserswithlistinput"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_createuserswithlistinput" aria-controls="collapse_createuserswithlistinput"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">POST</span>/user/createWithList</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Creates list of users with given input array</span></button></h2><div class="accordion-collapse collapse" id="collapse_createuserswithlistinput" aria-labelledby="heading_createuserswithlistinput"><div class="accordion-body px-4"><section class="section" id="createuserswithlistinput__parameters-13"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="createuserswithlistinput__parameters-13__entry__1">Type</th><th class="entry" id="createuserswithlistinput__parameters-13__entry__2">Name</th><th class="entry" id="createuserswithlistinput__parameters-13__entry__3">Description</th><th class="entry" id="createuserswithlistinput__parameters-13__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="createuserswithlistinput__parameters-13__entry__1">Body</td>
+<td class="entry" headers="createuserswithlistinput__parameters-13__entry__2"><p class="lines"><strong class="ph b">body</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="createuserswithlistinput__parameters-13__entry__3">List of user object</td>
+<td class="entry" headers="createuserswithlistinput__parameters-13__entry__4">Array of <a class="xref" href="#user">User</a></td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="createuserswithlistinput__responses-14"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="createuserswithlistinput__responses-14__entry__1">HTTP Code</th><th class="entry" id="createuserswithlistinput__responses-14__entry__2">Description</th><th class="entry" id="createuserswithlistinput__responses-14__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="createuserswithlistinput__responses-14__entry__1"><strong class="ph b">default</strong></td>
+<td class="entry" headers="createuserswithlistinput__responses-14__entry__2">successful operation</td>
+<td class="entry" headers="createuserswithlistinput__responses-14__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="createuserswithlistinput__produces-14"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-get" id="loginuser"><h2 class="accordion-header" id="heading_loginuser"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_loginuser" aria-controls="collapse_loginuser"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">GET</span>/user/login</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Logs user into the system</span></button></h2><div class="accordion-collapse collapse" id="collapse_loginuser" aria-labelledby="heading_loginuser"><div class="accordion-body px-4"><section class="section" id="loginuser__parameters-14"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="loginuser__parameters-14__entry__1">Type</th><th class="entry" id="loginuser__parameters-14__entry__2">Name</th><th class="entry" id="loginuser__parameters-14__entry__3">Description</th><th class="entry" id="loginuser__parameters-14__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="loginuser__parameters-14__entry__1">Query</td>
+<td class="entry" headers="loginuser__parameters-14__entry__2"><p class="lines"><strong class="ph b">username</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="loginuser__parameters-14__entry__3">The user name for login</td>
+<td class="entry" headers="loginuser__parameters-14__entry__4">string</td>
+</tr>
+<tr>
+<td class="entry" headers="loginuser__parameters-14__entry__1">Query</td>
+<td class="entry" headers="loginuser__parameters-14__entry__2"><p class="lines"><strong class="ph b">password</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="loginuser__parameters-14__entry__3">The password for login in clear text</td>
+<td class="entry" headers="loginuser__parameters-14__entry__4">string</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="loginuser__responses-15"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="loginuser__responses-15__entry__1">HTTP Code</th><th class="entry" id="loginuser__responses-15__entry__2">Description</th><th class="entry" id="loginuser__responses-15__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="loginuser__responses-15__entry__1"><strong class="ph b">200</strong></td>
+<td class="entry" headers="loginuser__responses-15__entry__2"><p class="lines">successful operation<br><strong class="ph b">Headers</strong>: <code class="ph codeph">X-Rate-Limit</code> (integer (int32))<br><strong class="ph b">Headers</strong>: <code class="ph codeph">X-Expires-After</code> (string (date-time))</p></td>
+<td class="entry" headers="loginuser__responses-15__entry__3">string</td>
+</tr>
+<tr>
+<td class="entry" headers="loginuser__responses-15__entry__1"><strong class="ph b">400</strong></td>
+<td class="entry" headers="loginuser__responses-15__entry__2">Invalid username/password supplied</td>
+<td class="entry" headers="loginuser__responses-15__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="loginuser__produces-15"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-get" id="logoutuser"><h2 class="accordion-header" id="heading_logoutuser"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_logoutuser" aria-controls="collapse_logoutuser"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">GET</span>/user/logout</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Logs out current logged in user session</span></button></h2><div class="accordion-collapse collapse" id="collapse_logoutuser" aria-labelledby="heading_logoutuser"><div class="accordion-body px-4"><section class="section" id="logoutuser__responses-16"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="logoutuser__responses-16__entry__1">HTTP Code</th><th class="entry" id="logoutuser__responses-16__entry__2">Description</th><th class="entry" id="logoutuser__responses-16__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="logoutuser__responses-16__entry__1"><strong class="ph b">default</strong></td>
+<td class="entry" headers="logoutuser__responses-16__entry__2">successful operation</td>
+<td class="entry" headers="logoutuser__responses-16__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="logoutuser__produces-16"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-get" id="getuserbyname"><h2 class="accordion-header" id="heading_getuserbyname"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_getuserbyname" aria-controls="collapse_getuserbyname"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">GET</span>/user/{username}</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Get user by user name</span></button></h2><div class="accordion-collapse collapse" id="collapse_getuserbyname" aria-labelledby="heading_getuserbyname"><div class="accordion-body px-4"><section class="section" id="getuserbyname__parameters-15"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="getuserbyname__parameters-15__entry__1">Type</th><th class="entry" id="getuserbyname__parameters-15__entry__2">Name</th><th class="entry" id="getuserbyname__parameters-15__entry__3">Description</th><th class="entry" id="getuserbyname__parameters-15__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="getuserbyname__parameters-15__entry__1">Path</td>
+<td class="entry" headers="getuserbyname__parameters-15__entry__2"><p class="lines"><strong class="ph b">username</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="getuserbyname__parameters-15__entry__3">The name that needs to be fetched. Use user1 for testing.</td>
+<td class="entry" headers="getuserbyname__parameters-15__entry__4">string</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="getuserbyname__responses-17"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="getuserbyname__responses-17__entry__1">HTTP Code</th><th class="entry" id="getuserbyname__responses-17__entry__2">Description</th><th class="entry" id="getuserbyname__responses-17__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="getuserbyname__responses-17__entry__1"><strong class="ph b">200</strong></td>
+<td class="entry" headers="getuserbyname__responses-17__entry__2">successful operation</td>
+<td class="entry" headers="getuserbyname__responses-17__entry__3"><a class="xref" href="#user">User</a></td>
+</tr>
+<tr>
+<td class="entry" headers="getuserbyname__responses-17__entry__1"><strong class="ph b">400</strong></td>
+<td class="entry" headers="getuserbyname__responses-17__entry__2">Invalid username supplied</td>
+<td class="entry" headers="getuserbyname__responses-17__entry__3">No Content</td>
+</tr>
+<tr>
+<td class="entry" headers="getuserbyname__responses-17__entry__1"><strong class="ph b">404</strong></td>
+<td class="entry" headers="getuserbyname__responses-17__entry__2">User not found</td>
+<td class="entry" headers="getuserbyname__responses-17__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="getuserbyname__produces-17"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-put" id="updateuser"><h2 class="accordion-header" id="heading_updateuser"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_updateuser" aria-controls="collapse_updateuser"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">PUT</span>/user/{username}</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Updated user</span></button></h2><div class="accordion-collapse collapse" id="collapse_updateuser" aria-labelledby="heading_updateuser"><div class="accordion-body px-4"><p class="p">This can only be done by the logged in user.</p><section class="section" id="updateuser__parameters-16"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="updateuser__parameters-16__entry__1">Type</th><th class="entry" id="updateuser__parameters-16__entry__2">Name</th><th class="entry" id="updateuser__parameters-16__entry__3">Description</th><th class="entry" id="updateuser__parameters-16__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="updateuser__parameters-16__entry__1">Path</td>
+<td class="entry" headers="updateuser__parameters-16__entry__2"><p class="lines"><strong class="ph b">username</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="updateuser__parameters-16__entry__3">name that need to be updated</td>
+<td class="entry" headers="updateuser__parameters-16__entry__4">string</td>
+</tr>
+<tr>
+<td class="entry" headers="updateuser__parameters-16__entry__1">Body</td>
+<td class="entry" headers="updateuser__parameters-16__entry__2"><p class="lines"><strong class="ph b">body</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="updateuser__parameters-16__entry__3">Updated user object</td>
+<td class="entry" headers="updateuser__parameters-16__entry__4"><a class="xref" href="#user">User</a></td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="updateuser__responses-18"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="updateuser__responses-18__entry__1">HTTP Code</th><th class="entry" id="updateuser__responses-18__entry__2">Description</th><th class="entry" id="updateuser__responses-18__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="updateuser__responses-18__entry__1"><strong class="ph b">400</strong></td>
+<td class="entry" headers="updateuser__responses-18__entry__2">Invalid user supplied</td>
+<td class="entry" headers="updateuser__responses-18__entry__3">No Content</td>
+</tr>
+<tr>
+<td class="entry" headers="updateuser__responses-18__entry__1"><strong class="ph b">404</strong></td>
+<td class="entry" headers="updateuser__responses-18__entry__2">User not found</td>
+<td class="entry" headers="updateuser__responses-18__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="updateuser__produces-18"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item swagger-delete" id="deleteuser"><h2 class="accordion-header" id="heading_deleteuser"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_deleteuser" aria-controls="collapse_deleteuser"><code xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema"><span class="swagger-verb">DELETE</span>/user/{username}</code><span xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="swagger-summary small">Delete user</span></button></h2><div class="accordion-collapse collapse" id="collapse_deleteuser" aria-labelledby="heading_deleteuser"><div class="accordion-body px-4"><p class="p">This can only be done by the logged in user.</p><section class="section" id="deleteuser__parameters-17"><h4 class="title h4">Parameters</h4>
+
+<div><table class="table"><colgroup><col><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="deleteuser__parameters-17__entry__1">Type</th><th class="entry" id="deleteuser__parameters-17__entry__2">Name</th><th class="entry" id="deleteuser__parameters-17__entry__3">Description</th><th class="entry" id="deleteuser__parameters-17__entry__4">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="deleteuser__parameters-17__entry__1">Path</td>
+<td class="entry" headers="deleteuser__parameters-17__entry__2"><p class="lines"><strong class="ph b">username</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="deleteuser__parameters-17__entry__3">The name that needs to be deleted</td>
+<td class="entry" headers="deleteuser__parameters-17__entry__4">string</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="deleteuser__responses-19"><h4 class="title h4">Responses</h4>
+
+<div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="deleteuser__responses-19__entry__1">HTTP Code</th><th class="entry" id="deleteuser__responses-19__entry__2">Description</th><th class="entry" id="deleteuser__responses-19__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="deleteuser__responses-19__entry__1"><strong class="ph b">400</strong></td>
+<td class="entry" headers="deleteuser__responses-19__entry__2">Invalid username supplied</td>
+<td class="entry" headers="deleteuser__responses-19__entry__3">No Content</td>
+</tr>
+<tr>
+<td class="entry" headers="deleteuser__responses-19__entry__1"><strong class="ph b">404</strong></td>
+<td class="entry" headers="deleteuser__responses-19__entry__2">User not found</td>
+<td class="entry" headers="deleteuser__responses-19__entry__3">No Content</td>
+</tr>
+</tbody></table></div>
+</section><section class="section" id="deleteuser__produces-19"><h4 class="title h4">Produces</h4>
+
+<ul class="ul">
+<li class="li"><code class="ph codeph">application/xml</code></li>
+<li class="li"><code class="ph codeph">application/json</code></li>
+</ul>
+</section></div></div></div></div>
+</article>
+<article class="topic nested1" aria-labelledby="ariaid-title26" id="definitions">
+<h2 class="title" id="ariaid-title26">Definitions</h2>
+<div class="body"></div>
+<div class="accordion mb-2"><div class="topic accordion-item definition" id="order"><h2 class="accordion-header" id="heading_order"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_order" aria-controls="collapse_order">Order</button></h2><div class="accordion-collapse collapse" id="collapse_order" aria-labelledby="heading_order"><div class="accordion-body px-4"><div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="order__entry__1">Name</th><th class="entry" id="order__entry__2">Description</th><th class="entry" id="order__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="order__entry__1"><p class="lines"><strong class="ph b">id</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="order__entry__2"></td>
+<td class="entry" headers="order__entry__3">integer (int64)</td>
+</tr>
+<tr>
+<td class="entry" headers="order__entry__1"><p class="lines"><strong class="ph b">petId</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="order__entry__2"></td>
+<td class="entry" headers="order__entry__3">integer (int64)</td>
+</tr>
+<tr>
+<td class="entry" headers="order__entry__1"><p class="lines"><strong class="ph b">quantity</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="order__entry__2"></td>
+<td class="entry" headers="order__entry__3">integer (int32)</td>
+</tr>
+<tr>
+<td class="entry" headers="order__entry__1"><p class="lines"><strong class="ph b">shipDate</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="order__entry__2"></td>
+<td class="entry" headers="order__entry__3">string (date-time)</td>
+</tr>
+<tr>
+<td class="entry" headers="order__entry__1"><p class="lines"><strong class="ph b">status</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="order__entry__2">Order Status</td>
+<td class="entry" headers="order__entry__3">string</td>
+</tr>
+<tr>
+<td class="entry" headers="order__entry__1"><p class="lines"><strong class="ph b">complete</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="order__entry__2"></td>
+<td class="entry" headers="order__entry__3">boolean</td>
+</tr>
+</tbody></table></div></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item definition" id="user"><h2 class="accordion-header" id="heading_user"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_user" aria-controls="collapse_user">User</button></h2><div class="accordion-collapse collapse" id="collapse_user" aria-labelledby="heading_user"><div class="accordion-body px-4"><div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="user__entry__1">Name</th><th class="entry" id="user__entry__2">Description</th><th class="entry" id="user__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="user__entry__1"><p class="lines"><strong class="ph b">id</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="user__entry__2"></td>
+<td class="entry" headers="user__entry__3">integer (int64)</td>
+</tr>
+<tr>
+<td class="entry" headers="user__entry__1"><p class="lines"><strong class="ph b">username</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="user__entry__2"></td>
+<td class="entry" headers="user__entry__3">string</td>
+</tr>
+<tr>
+<td class="entry" headers="user__entry__1"><p class="lines"><strong class="ph b">firstName</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="user__entry__2"></td>
+<td class="entry" headers="user__entry__3">string</td>
+</tr>
+<tr>
+<td class="entry" headers="user__entry__1"><p class="lines"><strong class="ph b">lastName</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="user__entry__2"></td>
+<td class="entry" headers="user__entry__3">string</td>
+</tr>
+<tr>
+<td class="entry" headers="user__entry__1"><p class="lines"><strong class="ph b">email</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="user__entry__2"></td>
+<td class="entry" headers="user__entry__3">string</td>
+</tr>
+<tr>
+<td class="entry" headers="user__entry__1"><p class="lines"><strong class="ph b">password</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="user__entry__2"></td>
+<td class="entry" headers="user__entry__3">string</td>
+</tr>
+<tr>
+<td class="entry" headers="user__entry__1"><p class="lines"><strong class="ph b">phone</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="user__entry__2"></td>
+<td class="entry" headers="user__entry__3">string</td>
+</tr>
+<tr>
+<td class="entry" headers="user__entry__1"><p class="lines"><strong class="ph b">userStatus</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="user__entry__2">User Status</td>
+<td class="entry" headers="user__entry__3">integer (int32)</td>
+</tr>
+</tbody></table></div></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item definition" id="category"><h2 class="accordion-header" id="heading_category"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_category" aria-controls="collapse_category">Category</button></h2><div class="accordion-collapse collapse" id="collapse_category" aria-labelledby="heading_category"><div class="accordion-body px-4"><div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="category__entry__1">Name</th><th class="entry" id="category__entry__2">Description</th><th class="entry" id="category__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="category__entry__1"><p class="lines"><strong class="ph b">id</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="category__entry__2"></td>
+<td class="entry" headers="category__entry__3">integer (int64)</td>
+</tr>
+<tr>
+<td class="entry" headers="category__entry__1"><p class="lines"><strong class="ph b">name</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="category__entry__2"></td>
+<td class="entry" headers="category__entry__3">string</td>
+</tr>
+</tbody></table></div></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item definition" id="tag"><h2 class="accordion-header" id="heading_tag"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_tag" aria-controls="collapse_tag">Tag</button></h2><div class="accordion-collapse collapse" id="collapse_tag" aria-labelledby="heading_tag"><div class="accordion-body px-4"><div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="tag__entry__1">Name</th><th class="entry" id="tag__entry__2">Description</th><th class="entry" id="tag__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="tag__entry__1"><p class="lines"><strong class="ph b">id</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="tag__entry__2"></td>
+<td class="entry" headers="tag__entry__3">integer (int64)</td>
+</tr>
+<tr>
+<td class="entry" headers="tag__entry__1"><p class="lines"><strong class="ph b">name</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="tag__entry__2"></td>
+<td class="entry" headers="tag__entry__3">string</td>
+</tr>
+</tbody></table></div></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item definition" id="pet"><h2 class="accordion-header" id="heading_pet"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_pet" aria-controls="collapse_pet">Pet</button></h2><div class="accordion-collapse collapse" id="collapse_pet" aria-labelledby="heading_pet"><div class="accordion-body px-4"><div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="pet__entry__1">Name</th><th class="entry" id="pet__entry__2">Description</th><th class="entry" id="pet__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="pet__entry__1"><p class="lines"><strong class="ph b">id</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="pet__entry__2"></td>
+<td class="entry" headers="pet__entry__3">integer (int64)</td>
+</tr>
+<tr>
+<td class="entry" headers="pet__entry__1"><p class="lines"><strong class="ph b">category</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="pet__entry__2"></td>
+<td class="entry" headers="pet__entry__3"><a class="xref" href="#category">Category</a></td>
+</tr>
+<tr>
+<td class="entry" headers="pet__entry__1"><p class="lines"><strong class="ph b">name</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="pet__entry__2"><p class="lines"><br><strong class="ph b">Example</strong>: <code class="ph codeph">doggie</code></p></td>
+<td class="entry" headers="pet__entry__3">string</td>
+</tr>
+<tr>
+<td class="entry" headers="pet__entry__1"><p class="lines"><strong class="ph b">photoUrls</strong><br><em class="ph i">required</em></p></td>
+<td class="entry" headers="pet__entry__2"></td>
+<td class="entry" headers="pet__entry__3">Array of string</td>
+</tr>
+<tr>
+<td class="entry" headers="pet__entry__1"><p class="lines"><strong class="ph b">tags</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="pet__entry__2"></td>
+<td class="entry" headers="pet__entry__3">Array of <a class="xref" href="#tag">Tag</a></td>
+</tr>
+<tr>
+<td class="entry" headers="pet__entry__1"><p class="lines"><strong class="ph b">status</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="pet__entry__2">pet status in the store</td>
+<td class="entry" headers="pet__entry__3">string</td>
+</tr>
+</tbody></table></div></div></div></div></div>
+<div class="accordion mb-2"><div class="topic accordion-item definition" id="apiresponse"><h2 class="accordion-header" id="heading_apiresponse"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_apiresponse" aria-controls="collapse_apiresponse">ApiResponse</button></h2><div class="accordion-collapse collapse" id="collapse_apiresponse" aria-labelledby="heading_apiresponse"><div class="accordion-body px-4"><div><table class="table"><colgroup><col><col><col></colgroup><thead class="thead"><tr><th class="entry" id="apiresponse__entry__1">Name</th><th class="entry" id="apiresponse__entry__2">Description</th><th class="entry" id="apiresponse__entry__3">Schema</th></tr></thead><tbody class="tbody">
+<tr>
+<td class="entry" headers="apiresponse__entry__1"><p class="lines"><strong class="ph b">code</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="apiresponse__entry__2"></td>
+<td class="entry" headers="apiresponse__entry__3">integer (int32)</td>
+</tr>
+<tr>
+<td class="entry" headers="apiresponse__entry__1"><p class="lines"><strong class="ph b">type</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="apiresponse__entry__2"></td>
+<td class="entry" headers="apiresponse__entry__3">string</td>
+</tr>
+<tr>
+<td class="entry" headers="apiresponse__entry__1"><p class="lines"><strong class="ph b">message</strong><br><em class="ph i">optional</em></p></td>
+<td class="entry" headers="apiresponse__entry__2"></td>
+<td class="entry" headers="apiresponse__entry__3">string</td>
+</tr>
+</tbody></table></div></div></div></div></div>
+</article>
+<article class="topic nested1" aria-labelledby="ariaid-title33" id="security">
+<h2 class="title" id="ariaid-title33">Security</h2>
+<div class="body">
+<ul class="ul">
+<li class="li"><strong class="ph b">petstore_auth</strong> (oauth2)</li>
+<li class="li"><strong class="ph b">api_key</strong> (apiKey)</li>
+</ul>
+</div>
+</article>
+</article></main></div><script language="javascript" src="./js/popovers.js"></script><script language="javascript" src="./js/dark-mode-toggler.js"></script><footer role="contentinfo" class="mt-auto border-top bg-primary-subtle"><!-- Footer --><div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <p>
+        <small>© 2024-2026 Jason Fox</small>
+      </p>
+    </div>
+  </div>
+</div><!-- Footer --></footer></body></html>
