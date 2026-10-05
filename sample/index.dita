@@ -21,24 +21,6 @@
     </fig>
 
     <section>
-      <title>Prerequisites</title>
-      <p>The plug-in bridges <xref
-          href="https://dita-bootstrap.github.io/"
-          format="html"
-          scope="external"
-        >DITA Bootstrap</xref> and <xref
-          href="https://github.com/jason-fox/fox.jason.passthrough.swagger"
-          format="html"
-          scope="external"
-        >fox.jason.passthrough.swagger</xref>, so both must be installed. The Swagger
-        passthrough converts the Swagger file using <xref
-          href="https://pandoc.org/"
-          format="html"
-          scope="external"
-        >Pandoc</xref>, which must be running on the user's machine.</p>
-    </section>
-
-    <section>
       <title>Installing the <term>DITA Bootstrap Swagger</term> plug-in</title>
       <p>Use the <cmdname>dita</cmdname> command to add the plug-in and its dependencies to your DITA Open Toolkit
         installation:</p>
