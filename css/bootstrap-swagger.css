@@ -1,32 +1,31 @@
-
-[class*="swagger-"] .accordion-button {
-    background: transparent;
+[class*='swagger-'] .accordion-button {
+  background: transparent;
 }
 
-[class*="swagger-"] .accordion-button:not(.collapsed):not(:focus) {
-    box-shadow: inset 0 -2px 0 var(--swagger-color);
+[class*='swagger-'] .accordion-button:not(.collapsed):not(:focus) {
+  box-shadow: inset 0 -2px 0 var(--swagger-color);
 }
 
-[class*="swagger-"] th {
-    background: var(--bs-table-striped-bg);
+[class*='swagger-'] th {
+  background: var(--bs-table-striped-bg);
 }
 
-[class*="swagger-"] td {
-    background: transparent;
+[class*='swagger-'] td {
+  background: transparent;
 }
 
 span.swagger-verb {
-    margin-left: 0px !important;
+  margin-left: 0 !important;
 }
 
-[class*="swagger-"] {
-    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--swagger-color) 25%, transparent);
+[class*='swagger-'] {
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--swagger-color) 25%, transparent);
 }
 
-[class*="swagger-"] a {
+[class*='swagger-'] a {
   color: color-mix(in srgb, var(--swagger-color) 85%, var(--bs-black));
 }
 
-[class*="swagger-"] a:hover {
+[class*='swagger-'] a:hover {
   color: color-mix(in srgb, var(--swagger-color) 65%, var(--bs-black));
 }

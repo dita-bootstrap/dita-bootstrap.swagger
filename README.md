@@ -12,6 +12,8 @@ This plug-in only bridges the two - it has no independent purpose and requires b
 `fox.jason.passthrough.swagger` still renders correctly (always-expanded) under both plain `html5` and
 `html5-bootstrap` builds; this plug-in only changes the `html5-bootstrap` case.
 
+![](https://dita-bootstrap.github.io/dita-bootstrap.swagger/src/swagger.png)
+
 <!-- MarkdownTOC levels="2,3" -->
 
 - [Installation](#installation)

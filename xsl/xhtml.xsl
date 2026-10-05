@@ -3,18 +3,16 @@
 	This file is part of the DITA Bootstrap Swagger plug-in for DITA Open Toolkit.
 	See the accompanying LICENSE file for applicable licenses.
 -->
-<xsl:stylesheet
-  version="2.0"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
->
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:template
-	  match="*[contains(@class,' topic/topic ')][starts-with(@outputclass, 'swagger-')]"
-	  mode="child.topic"
-	  priority="10"
-	>
-		<xsl:variable name="codeblock"
-		  select="*[contains(@class,' topic/body ')]/*[contains(@class,' pr-d/codeblock ') and starts-with(@outputclass, 'swagger-')][1]"
-		/>
+    match="*[contains(@class,' topic/topic ')][starts-with(@outputclass, 'swagger-')]"
+    mode="child.topic"
+    priority="10"
+  >
+		<xsl:variable
+      name="codeblock"
+      select="*[contains(@class,' topic/body ')]/*[contains(@class,' pr-d/codeblock ') and starts-with(@outputclass, 'swagger-')][1]"
+    />
 		<xsl:variable name="headingId" select="concat('heading_', @id)"/>
 		<xsl:variable name="collapseId" select="concat('collapse_', @id)"/>
 		<div class="accordion mb-2">
@@ -24,12 +22,7 @@
 				</xsl:call-template>
 				<xsl:call-template name="setidaname"/>
 				<h2 class="accordion-header" id="{$headingId}">
-					<button
-					  class="accordion-button collapsed"
-					  type="button"
-					  data-bs-toggle="collapse"
-					  aria-expanded="false"
-					>
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">
 						<xsl:attribute name="data-bs-target" select="concat('#', $collapseId)"/>
 						<xsl:attribute name="aria-controls" select="$collapseId"/>
 						<xsl:call-template name="swagger-summary-row">
@@ -46,11 +39,7 @@
 		</div>
 	</xsl:template>
 
-	<xsl:template
-	  match="*[contains(@class,' topic/topic ')][@outputclass = 'definition']"
-	  mode="child.topic"
-	  priority="10"
-	>
+	<xsl:template match="*[contains(@class,' topic/topic ')][@outputclass = 'definition']" mode="child.topic" priority="10">
 		<xsl:variable name="headingId" select="concat('heading_', @id)"/>
 		<xsl:variable name="collapseId" select="concat('collapse_', @id)"/>
 		<div class="accordion mb-2">
@@ -60,12 +49,7 @@
 				</xsl:call-template>
 				<xsl:call-template name="setidaname"/>
 				<h2 class="accordion-header" id="{$headingId}">
-					<button
-					  class="accordion-button collapsed"
-					  type="button"
-					  data-bs-toggle="collapse"
-					  aria-expanded="false"
-					>
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false">
 						<xsl:attribute name="data-bs-target" select="concat('#', $collapseId)"/>
 						<xsl:attribute name="aria-controls" select="$collapseId"/>
 						<xsl:value-of select="*[contains(@class,' topic/title ')]"/>

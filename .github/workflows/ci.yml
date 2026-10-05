@@ -1,0 +1,61 @@
+name: CI
+'on':
+  push:
+    branches:
+      - master
+      - develop
+  workflow_dispatch:
+
+jobs:
+  build-dita:
+    name: Build DITA
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v7
+
+      - name: Calculate short SHA
+        uses: benjlevesque/short-sha@v4.0
+        id: short-sha
+        with:
+          length: 7
+      - run: echo $SHA
+        env:
+          SHA: ${{ steps.short-sha.outputs.sha }}
+      - run: echo $SHA
+        env:
+          SHA: ${{ env.SHA }}
+
+      - name: Build Bootstrap
+        # uses: dita-ot/dita-ot-action@master
+        # Pin build to DITA-OT 4.3 per dita-ot/dita-ot-action#11
+        uses: dita-ot/dita-ot-action@4.4
+        with:
+          install: |
+            apt-get update -q
+            export DEBIAN_FRONTEND=noninteractive
+            apt-get install -qy --no-install-recommends nodejs pandoc
+            nodejs -v
+            pandoc -v
+          plugins: |
+            fox.jason.extend.css
+            https://github.com/dita-bootstrap/dita-bootstrap.html/archive/develop.zip
+            https://github.com/doctales/org.doctales.xmltask/archive/master.zip
+            https://github.com/jason-fox/fox.jason.passthrough/archive/master.zip
+            https://github.com/jason-fox/fox.jason.passthrough.pandoc/archive/master.zip
+            https://github.com/jason-fox/fox.jason.passthrough.swagger/archive/master.zip
+            https://github.com/dita-bootstrap/dita-bootstrap.swagger/archive/develop.zip
+            https://github.com/jason-fox/fox.jason.prismjs/archive/master.zip
+            fox.jason.favicon
+            fox.jason.open-graph
+          project: .github/dita-ot/html.xml
+
+      - name: Deploy HTML 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.9.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages # The branch the action should deploy to.
+          folder: out/html # The folder the action should deploy.
+          commit-message: '🚀 Deploy ${{ env.SHA }} to GitHub Pages'
+          git-config-name: 'GitHub Action'
+          git-config-email: 'action@github.com'

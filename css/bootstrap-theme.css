@@ -1,47 +1,47 @@
 .swagger-post {
-    --swagger-color: var(--bs-green-500, var(--bs-green, #49cc90));
-    background: rgba(73,204,144,.1);
-    background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
+  --swagger-color: var(--bs-green-500, var(--bs-green, #49cc90));
+  background: rgba(73, 204, 144, 0.1);
+  background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
 }
 
 .swagger-put {
-    --swagger-color: var(--bs-orange-500, var(--bs-orange, #fca130));
-    background: rgba(252,161,48,.1);
-    background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
+  --swagger-color: var(--bs-orange-500, var(--bs-orange, #fca130));
+  background: rgba(252, 161, 48, 0.1);
+  background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
 }
 
 .swagger-delete {
-    --swagger-color: var(--bs-red-500, var(--bs-red, #f93e3e));
-    background: rgba(249,62,62,.1);
-    background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
+  --swagger-color: var(--bs-red-500, var(--bs-red, #f93e3e));
+  background: rgba(249, 62, 62, 0.1);
+  background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
 }
 
 .swagger-get {
-    --swagger-color: var(--bs-blue-500, var(--bs-blue, #61affe));
-    background: rgba(97,175,254,.1);
-    background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
+  --swagger-color: var(--bs-blue-500, var(--bs-blue, #61affe));
+  background: rgba(97, 175, 254, 0.1);
+  background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
 }
 
 .swagger-patch {
-    --swagger-color: var(--bs-teal-500, var(--bs-teal, #50e3c2));
-    background: rgba(80,227,194,.1);
-    background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
+  --swagger-color: var(--bs-teal-500, var(--bs-teal, #50e3c2));
+  background: rgba(80, 227, 194, 0.1);
+  background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
 }
 
 .swagger-head {
-    --swagger-color: var(--bs-purple-500, var(--bs-purple, #9012fe));
-    background: rgba(144,18,254,.1);
-    background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
+  --swagger-color: var(--bs-purple-500, var(--bs-purple, #9012fe));
+  background: rgba(144, 18, 254, 0.1);
+  background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
 }
 
 .swagger-options {
-    --swagger-color: var(--bs-indigo-500, var(--bs-indigo, #0d5aa7));
-    background: rgba(13,90,167,.1);
-    background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
+  --swagger-color: var(--bs-indigo-500, var(--bs-indigo, #0d5aa7));
+  background: rgba(13, 90, 167, 0.1);
+  background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
 }
 
 .swagger-deprecated {
-    --swagger-color: var(--bs-gray-300, var(--bs-gray-400, #ebebeb));
-    background: hsla(0,0%,92.2%,.1);
-    background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
+  --swagger-color: var(--bs-gray-300, var(--bs-gray-400, #ebebeb));
+  background: hsla(0deg, 0%, 92.2%, 0.1);
+  background: color-mix(in srgb, var(--swagger-color) 10%, transparent);
 }
