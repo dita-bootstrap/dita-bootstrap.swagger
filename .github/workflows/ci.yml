@@ -8,6 +8,8 @@ name: CI
 
 jobs:
   build-dita:
+    permissions:
+      contents: write
     name: Build DITA
     runs-on: ubuntu-latest
     steps:
