@@ -59,3 +59,9 @@ dita --input=path/to/your.ditamap \
 ## License
 
 [Apache 2.0](LICENSE) © 2026 Jason Fox
+
+> [!NOTE]
+> The sample documentation is rendered from the Swagger [Petstore][1] example API definition, which is
+> published by the Swagger API project under the Apache 2.0 license.
+
+[1]: https://github.com/swagger-api/swagger-petstore
