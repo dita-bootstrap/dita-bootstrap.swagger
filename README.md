@@ -4,9 +4,9 @@
 
 _DITA Bootstrap Swagger_ is a [DITA Open Toolkit plug-in](https://www.dita-ot.org/plugins) that extends HTML output. It renders each Swagger operation as a collapsed [Bootstrap accordion](https://getbootstrap.com/docs/5.3/components/accordion/) item, matching
 [petstore.swagger.io](https://petstore.swagger.io/#/)'s own collapsed-by-default endpoint list, when building with
-[DITA Bootstrap](https://dita-bootstrap.github.io)'s `html5-bootstrap` transtype.
+[DITA Bootstrap](https://dita-bootstrap.org/html)'s `html5-bootstrap` transtype.
 
-![](https://dita-bootstrap.github.io/dita-bootstrap.swagger/src/swagger.png)
+![](https://dita-bootstrap.org/dita-bootstrap.swagger/src/swagger.png)
 
 <!-- MarkdownTOC levels="2,3" -->
 
